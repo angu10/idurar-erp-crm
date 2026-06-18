@@ -22,6 +22,11 @@ export default function PaymentMode() {
     },
   ];
 
+  const readColumns = [
+    { title: translate('Payment Mode'), dataIndex: 'name' },
+    { title: translate('Description'), dataIndex: 'description' },
+  ];
+
   const config = {
     entity,
     PANEL_TITLE: translate('Payment Mode'),
@@ -29,6 +34,7 @@ export default function PaymentMode() {
     ADD_NEW_ENTITY: translate('add_new_payment_mode'),
     ENTITY_NAME: translate('Payment Mode'),
     dataTableColumns,
+    readColumns,
     searchConfig,
     deleteModalLabels,
   };

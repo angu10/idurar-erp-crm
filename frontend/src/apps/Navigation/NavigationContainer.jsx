@@ -26,6 +26,9 @@ import {
   FilterOutlined,
   WalletOutlined,
   ReconciliationOutlined,
+  TeamOutlined,
+  BankOutlined,
+  FunnelPlotOutlined,
 } from '@ant-design/icons';
 
 const { Sider } = Layout;
@@ -76,6 +79,21 @@ function Sidebar({ collapsible, isMobile = false }) {
       label: <Link to={'/payment'}>{translate('payments')}</Link>,
     },
 
+    {
+      key: 'people',
+      icon: <TeamOutlined />,
+      label: <Link to={'/people'}>{translate('peoples')}</Link>,
+    },
+    {
+      key: 'company',
+      icon: <BankOutlined />,
+      label: <Link to={'/company'}>{translate('companies')}</Link>,
+    },
+    {
+      key: 'lead',
+      icon: <FunnelPlotOutlined />,
+      label: <Link to={'/lead'}>{translate('leads')}</Link>,
+    },
     {
       key: 'paymentMode',
       label: <Link to={'/payment/mode'}>{translate('payments_mode')}</Link>,

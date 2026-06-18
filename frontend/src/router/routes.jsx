@@ -24,9 +24,14 @@ const PaymentUpdate = lazy(() => import('@/pages/Payment/PaymentUpdate'));
 const PaymentMode = lazy(() => import('@/pages/PaymentMode'));
 const Taxes = lazy(() => import('@/pages/Taxes'));
 
+const People = lazy(() => import('@/pages/People'));
+const Company = lazy(() => import('@/pages/Company'));
+const Lead = lazy(() => import('@/pages/Lead'));
+
 const Settings = lazy(() => import('@/pages/Settings/Settings'));
 const Profile = lazy(() => import('@/pages/Profile'));
 const About = lazy(() => import('@/pages/About'));
+const Dashboard = lazy(() => import('@/pages/Dashboard'));
 
 let routes = {
   expense: [],
@@ -45,7 +50,7 @@ let routes = {
     },
     {
       path: '/',
-      element: <Invoice />,
+      element: <Dashboard />,
     },
     {
       path: '/customer',
@@ -106,6 +111,18 @@ let routes = {
     {
       path: '/taxes',
       element: <Taxes />,
+    },
+    {
+      path: '/people',
+      element: <People />,
+    },
+    {
+      path: '/company',
+      element: <Company />,
+    },
+    {
+      path: '/lead',
+      element: <Lead />,
     },
     {
       path: '/settings',

@@ -4,12 +4,11 @@ const summary = async (Model, req, res) => {
     removed: false,
   });
 
-  const resultsPromise = await Model.countDocuments({
-    removed: false,
-  })
-    .where(req.query.filter)
-    .equals(req.query.equal)
-    .exec();
+  let query = Model.countDocuments({ removed: false });
+  if (req.query.filter && req.query.equal) {
+    query = query.where(req.query.filter).equals(req.query.equal);
+  }
+  const resultsPromise = await query.exec();
   // Resolving both promises
   const [countFilter, countAllDocs] = await Promise.all([resultsPromise, countPromise]);
 

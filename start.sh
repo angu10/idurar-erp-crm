@@ -22,6 +22,11 @@ cleanup() {
 }
 trap cleanup SIGINT SIGTERM
 
+# 0. Kill any stale processes on our ports
+log "Clearing ports 8888 and 3000..."
+lsof -ti tcp:8888 | xargs kill -9 2>/dev/null
+lsof -ti tcp:3000 | xargs kill -9 2>/dev/null
+
 # 1. MongoDB via Docker
 log "Starting MongoDB container..."
 docker compose -f "$ROOT/docker-compose.yml" up -d

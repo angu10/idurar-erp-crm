@@ -26,6 +26,11 @@ export default function Taxes() {
     },
   ];
 
+  const readColumns = [
+    { title: translate('name'), dataIndex: 'taxName' },
+    { title: translate('Value'), dataIndex: 'taxValue' },
+  ];
+
   const config = {
     entity,
     PANEL_TITLE: translate('Taxes'),
@@ -33,6 +38,7 @@ export default function Taxes() {
     ADD_NEW_ENTITY: translate('add_new_tax'),
     ENTITY_NAME: translate('tax'),
     dataTableColumns,
+    readColumns,
     searchConfig,
     deleteModalLabels,
   };
